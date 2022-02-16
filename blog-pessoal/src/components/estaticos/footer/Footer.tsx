@@ -7,7 +7,7 @@ import {Typography, Box, Grid } from '@material-ui/core';
 function Footer() {
     return (
         <>
-            <Grid container direction="row" justifyContent="center" alignItems="center">
+            <Grid className='back2' container direction="row" justifyContent="center" alignItems="center">
                 <Grid alignItems="center" item xs={12}>
                     <Box style={{ backgroundColor: "#984d4e", width:"100%", height: "100px" }}>
                         <Box paddingTop={1} display="flex" alignItems="center" justifyContent="center">
