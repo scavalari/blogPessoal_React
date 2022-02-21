@@ -1,8 +1,16 @@
-.titulo{
-    color: red;
-    text-align: center;
-}
-.back{
+.caixa{
+    background-color: #a88081 !important;
     width: 100vw;
-    min-height: calc(100vh - 64px);
+    min-height:max-content;
+}
+
+.titulo{
+    color: white !important ;
+    font-weight: bold !important;
+}
+
+.button{
+    border-color: white !important; 
+    background-color: #984d4e !important; 
+    color: white !important;
 }

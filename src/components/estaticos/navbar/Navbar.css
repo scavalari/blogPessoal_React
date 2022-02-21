@@ -1,3 +1,23 @@
-.back3{
-    height: 64px;
+.nav{
+    background-color: #984d4e!important;
+    height: 80px;
+    position: static !important;
+    justify-content:center;
+}
+.cursor{
+    cursor: pointer;
+    color: white;
+}
+.blog{
+    color: white !important;
+    font-weight: bold !important;
+}
+.nav2{
+    display: flex !important;
+    justify-content: end !important;
+}
+
+
+.text-decorator-none{
+    text-decoration: none;
 }

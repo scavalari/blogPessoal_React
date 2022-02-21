@@ -1,34 +1,33 @@
 import React from 'react';
 import GitHubIcon from '@material-ui/icons/GitHub';
-import FacebookIcon from '@material-ui/icons/Facebook';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import {Typography, Box, Grid } from '@material-ui/core';
+import './Footer.css';
 
 function Footer() {
     return (
         <>
-            <Grid className='back2' container direction="row" justifyContent="center" alignItems="center">
+            <Grid container direction="row" justifyContent="center" alignItems="center">
                 <Grid alignItems="center" item xs={12}>
-                    <Box style={{ backgroundColor: "#984d4e", width:"100%", height: "100px" }}>
+                    <Box className='box1'>
                         <Box paddingTop={1} display="flex" alignItems="center" justifyContent="center">
-                            <Typography variant="h5" align="center" gutterBottom style={{ color: "white" }}>Entre em contato comigo! </Typography>
+                            <Typography variant="h5" align="center" gutterBottom className='texto' >Entre em contato comigo! </Typography>
                         </Box>
                         <Box display="flex" alignItems="center" justifyContent="center">
-                           
                             <a href="https://github.com/scavalari" target="_blank">
-                                <GitHubIcon style={{ fontSize: 50, color: "white" }} />
+                                <GitHubIcon className='iconsG'/>
                             </a>
                             <a href="https://www.linkedin.com/in/ferreirasc09/" target="_blank">
-                                <LinkedInIcon style={{ fontSize: 60, color: "white" }} />
+                                <LinkedInIcon className='iconsL'/>
                             </a>
                         </Box>
                     </Box>
-                    <Box style={{ backgroundColor: "#984d4e", height: "60px" }}>
-                        <Box paddingTop={1}>
-                            <Typography variant="subtitle2" align="center" gutterBottom style={{ color: "white" }} >© 2022 Copyright:</Typography>
+                    <Box className='box2' >
+                        <Box paddingTop={2} >
+                            <Typography variant="subtitle2" align="center" gutterBottom className='texto' >© 2022 Copyright:</Typography>
                         </Box>
                         <Box>
-                                <Typography variant="subtitle2" gutterBottom style={{ color: "white" }} align="center">FullStack Developer Stephanie Ferreira</Typography>
+                                <Typography variant="subtitle2" gutterBottom className='texto' align="center">FullStack Developer Stephanie Ferreira</Typography>
                         </Box>
                     </Box>
                 </Grid>

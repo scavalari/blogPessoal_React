@@ -1,0 +1,15 @@
+.text-decorator-none{
+    text-decoration: none;
+}
+.font{
+    font-weight: bold;
+}
+.imagem{
+    background-image: url("../../assets/img/twd.jpg");
+    background-repeat: no-repeat;
+    width: 100vh;
+    min-height: 50vh;
+    background-size: cover; 
+    background-position: center;
+
+}

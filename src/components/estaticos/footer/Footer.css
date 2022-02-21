@@ -1,3 +1,19 @@
-.back2{
-    height: 68px;
+.box1{
+    background-color: #984d4e !important;
+    height: 80px !important;
+}
+.texto{
+    color: white !important;
+}
+.iconsG{
+    font-size: 30px;
+    color: white !important;
+}
+.iconsL{
+    font-size: 35px !important;
+    color: white;
+}
+.box2{
+    background-color: #984d4e !important;
+    height: 70px !important;
 }
