@@ -2,12 +2,12 @@ import { Grid, Box, Typography, TextField, Button } from "@material-ui/core";
 import React from "react";
 import {Link} from 'react-router-dom'
 import './Login.css';
-import twd from "../../assets/img/twd.jpg"
+import twd3 from "../../assets/img/twd3.jpg"
 
 
 function Login(){
     return(
-        <Grid container direction="row" justifyContent="center" alignItems="center" >
+        <Grid container direction="row" justifyContent="center" alignItems="center" className='imagem'>
             <Grid alignItems="center" xs={6}>
                 <Box paddingX={20}>
                     <form>
@@ -24,13 +24,14 @@ function Login(){
                     </form>
                     <Box display="flex" justifyContent="center" marginTop={2} >
                         <Box marginRight={1} >
-                            <Typography variant="subtitle1" gutterBottom align="center" >Ainda não é um Walker?</Typography>
+                            <Typography variant="subtitle1" gutterBottom align="center" className="font">Ainda não é um Walker?</Typography>
                         </Box>
-                        <Typography variant="subtitle1" gutterBottom align="center" className="font">Cadastre-se aqui</Typography>
+                        <Link to='/cadastrousuario'>
+                        <Typography variant="subtitle1" gutterBottom align="center" className="font" >Cadastre-se aqui</Typography>
+                        </Link>
                     </Box>
                 </Box>
-            </Grid>
-            <Grid xs={6} className='imagem'>
+
 
             </Grid>
         </Grid>
