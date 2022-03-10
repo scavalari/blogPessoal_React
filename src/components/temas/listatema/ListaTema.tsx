@@ -6,49 +6,58 @@ import './ListaTema.css';
 import useLocalStorage from 'react-use-localstorage';
 import {useHistory} from 'react-router-dom';
 import { busca } from '../../../services/Service';
+import {toast} from 'react-toastify';
 
 function ListaTema() {
-const [temas, setTemas] = useState<Tema[]>([])
-const [token, setToken] = useLocalStorage('token');
-let history = useHistory();
+  const [temas, setTemas] = useState<Tema[]>([])
+  const [token, setToken] = useLocalStorage('token');
+  let history = useHistory();
 
-useEffect(()=>{
-  if(token == ''){
-    alert("Você precisa estar logado")
-    history.push("/login")
-  }
-}, [token])
-
-
-async function getTema(){
-  await busca("/temas", setTemas, {
-    headers: {
-      'Authorization': token
+  useEffect(()=>{
+    if(token == ''){
+      toast.error("Você precisa estar logado", {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: false,
+        draggable: false,
+        theme: "colored",
+        progress: undefined,
+    });
+      history.push("/login")
     }
-  })
-}
+  }, [token])
 
 
-useEffect(()=>{
-  getTema()
-}, [temas.length])
+  async function getTema(){
+    await busca("/temas", setTemas, {
+      headers: {
+        'Authorization': token
+      }
+    })
+  }
 
+
+  useEffect(()=>{
+    getTema()
+  }, [temas.length])
 
   return (
     <>
     {
       temas.map(tema =>(
       <Box m={2} >
-        <Card variant="outlined">
-          <CardContent>
+        <Card  className='img3' variant="outlined">
+          <CardContent   className="img2" >
             <Typography color="textSecondary" gutterBottom>
               Tema
             </Typography>
             <Typography variant="h5" component="h2">
-             {tema.descricao}
+              {tema.descricao}
             </Typography>
           </CardContent>
-          <CardActions>
+          <CardActions className='img2'>
             <Box display="flex" justifyContent="center" mb={1.5} >
 
               <Link to={`/formularioTema/${tema.id}`} className="text-decorator-none">
@@ -70,7 +79,7 @@ useEffect(()=>{
         </Card>
       </Box>
       ))
-    }
+}
     </>
   );
 }

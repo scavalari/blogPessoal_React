@@ -1,19 +1,18 @@
 .box1{
-    background-color: black !important;
-    height: 80px !important;
-}
-.texto{
-    color: white !important;
-}
-.iconsG{
-    font-size: 30px;
-    color: white !important;
-}
-.iconsL{
-    font-size: 35px !important;
-    color: white;
+    background-image: url(https://i.imgur.com/EagUoid.png);
+    height: 120px;
+    padding-bottom: 10px;
+    
+    
 }
 .box2{
-    background-color: black !important;
-    height: 70px !important;
+    background-image: url(https://i.imgur.com/EagUoid.png); 
+    height: 60px;
+}
+.redes{
+    font-size: 40px!important;
+    color: #134631;
+}
+.textos1{
+    color: #123d23;
 }

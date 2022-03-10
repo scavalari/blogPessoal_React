@@ -1,19 +1,18 @@
 import React, { useEffect, useState } from 'react'
-import {Box, Card, CardActions, CardContent, Button, Typography} from '@material-ui/core';
-import './DeletarTema.css';
+import {Typography, Button, Box, Card, CardActions, CardContent } from "@material-ui/core"
+import './DeletarPostagem.css';
+import Postagem from '../../../models/Postagem';
+import { buscaId, deleteId } from '../../../services/Service';
 import { useHistory, useParams } from 'react-router-dom';
 import useLocalStorage from 'react-use-localstorage';
-import { buscaId, deleteId } from '../../../services/Service';
-import Tema from '../../../models/Tema';
 import {toast} from 'react-toastify';
 
-
-function DeletarTema() {
-
+function DeletarPostagem() {
+   
   let history = useHistory();
   const { id } = useParams<{id: string}>();
   const [token, setToken] = useLocalStorage('token');
-  const [tema, setTema] = useState<Tema>()
+  const [post, setPosts] = useState<Postagem>()
 
   useEffect(() => {
       if (token == "") {
@@ -39,7 +38,7 @@ function DeletarTema() {
   }, [id])
 
   async function findById(id: string) {
-      buscaId(`/temas/${id}`, setTema, {
+      buscaId(`/postagens/${id}`, setPosts, {
           headers: {
             'Authorization': token
           }
@@ -47,13 +46,13 @@ function DeletarTema() {
       }
 
       function sim() {
-          history.push('/temas')
-          deleteId(`/temas/${id}`, {
+          history.push('/posts')
+          deleteId(`/postagens/${id}`, {
             headers: {
               'Authorization': token
             }
           });
-          toast.success("Tema deletado com sucesso", {
+          toast.success("Postagem deletada com sucesso", {
             position: "top-right",
             autoClose: 2000,
             hideProgressBar: false,
@@ -66,35 +65,35 @@ function DeletarTema() {
         }
       
         function nao() {
-          history.push('/temas')
+          history.push('/posts')
         }
-        
-          
+
   return (
     <>
       <Box m={2}>
-        <Card variant="outlined">
+        <Card variant="outlined" >
           <CardContent>
             <Box justifyContent="center">
               <Typography color="textSecondary" gutterBottom>
-                Deseja deletar o Tema:
+                Deseja deletar a Postagem:
               </Typography>
-              <Typography color="textSecondary">
-              {tema?.descricao}
+              <Typography color="textSecondary" >
+              {post?.titulo}
               </Typography>
             </Box>
+
           </CardContent>
           <CardActions>
             <Box display="flex" justifyContent="start" ml={1.0} mb={2} >
               <Box mx={2}>
-                <Button onClick={sim} variant="contained" className="marginLeft" size='large' color="primary">
-                  Sim
-                </Button>
+              <Button  onClick={sim} variant="contained" className="marginLeft" size='large' color="primary">
+                Sim
+              </Button>
               </Box>
-              <Box mx={2}>
-                <Button onClick={nao} variant="contained" size='large' color="secondary">
-                  Não
-                </Button>
+              <Box>
+              <Button  onClick={nao} variant="contained" size='large' color="secondary">
+                Não
+              </Button>
               </Box>
             </Box>
           </CardActions>
@@ -103,4 +102,4 @@ function DeletarTema() {
     </>
   );
 }
-export default DeletarTema;
+export default DeletarPostagem;

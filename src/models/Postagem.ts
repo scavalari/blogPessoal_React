@@ -1,10 +1,9 @@
 import Tema from './Tema'
-
 interface Postagem{
     id: number;
-    titulo: string;      
+    titulo: string;
     texto: string;
-    tema?: Tema| null
+    tema?:Tema|null
 }
 
 export default Postagem;
