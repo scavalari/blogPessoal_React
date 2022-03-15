@@ -1,8 +1,12 @@
 .cursor{
     cursor: pointer;
     color: white;
+    padding-right: 34px;
 }
 
 .text-decorator-none{
     text-decoration: none;
+}
+.box4{
+    background-color: #141936 !important;
 }
